@@ -25,7 +25,7 @@ def main():
 		if i == 0:
 			st.subheader("To view word cloud in each month, choose from left sidebar")
 		if i>0 and dataviz_choice == months[i]:
-			st.image(images[i+1],width = 600) 
+			st.image(images[i],width = 600) 
             
 	st.subheader("Check box to see popularity trend of each keyword")
 	check_boxes =  ['CASES','TRUMP','US','DEATHS','CHINA','MASK','POSITIVE','PUBLIC','SPREAD']
