@@ -29,10 +29,10 @@ def main():
 			st.image('images/keyword_'+months[i]+'.png',width = 600) 
             
 	st.subheader("Check box to see popularity trend of each keyword")
-	check_boxes =  ['CASES','TRUMP','US','DEATH','CHINA','MASK','PUBLIC','LOCKDOWN','HOSPITAL']
+	check_boxes =  ['CASE','TRUMP','US','DEATH','CHINA','MASK','PUBLIC','LOCKDOWN','HOSPITAL']
 	for i in range(9):
 		if st.checkbox(check_boxes[i]):
-			st.image('images/frequency_'+check_boxes[i].upper()+'.png',width = 600)
+			st.image('images/frequency_'+check_boxes[i].lower()+'.png',width = 600)
 
 if __name__ == "__main__":
     main()
