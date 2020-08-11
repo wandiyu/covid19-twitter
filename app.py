@@ -8,14 +8,15 @@ def get_images(data_name):
 	data = open(data_name)
 	read_data = data.read().split()
 	data.close()
+	print (read_data)
 	return read_data
 
 
 def main():
-	st.header("What we talk about when we talk about COVID-19")
+	st.title("What we talk about when we talk about COVID-19")
 	st.subheader("keywords on twitter")
 	images = get_images('imageaddress.txt')
-	st.image(images[0],width = 600)
+	st.image('images/keyword.png',width = 600)
 
 	
 	months = ["Please choose","Feb", "Mar", "Apr", "May","Jun", "Jul"]
@@ -25,13 +26,13 @@ def main():
 		if i == 0:
 			st.subheader("To view word cloud in each month, choose from left sidebar")
 		if i>0 and dataviz_choice == months[i]:
-			st.image(images[i],width = 600) 
+			st.image('images/keyword_'+months[i]+'.png',width = 600) 
             
 	st.subheader("Check box to see popularity trend of each keyword")
-	check_boxes =  ['CASES','TRUMP','US','DEATHS','CHINA','MASK','POSITIVE','PUBLIC','SPREAD']
+	check_boxes =  ['CASES','TRUMP','US','DEATH','CHINA','MASK','PUBLIC','LOCKDOWN','HOSPITAL']
 	for i in range(9):
 		if st.checkbox(check_boxes[i]):
-			st.image(images[i+7],width = 600)
+			st.image('images/frequency_'+check_boxes[i].upper()+'.png',width = 600)
 
 if __name__ == "__main__":
     main()
